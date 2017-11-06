@@ -1,0 +1,17 @@
+LOCAL_PATH := $(call my-dir)
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE    := MainActivity
+LOCAL_SRC_FILES := MainActivity.cpp
+LOCAL_SRC_FILES += NativeClass.cpp
+
+
+#LOCAL_C_INCLUDES += $(LOCAL_PATH)/jni
+#PROJECT_FILES := $(wildcard $(LOCAL_PATH)/jni/*.cpp)
+#PROJECT_FILES := $(PROJECT_FILES:$(LOCAL_PATH)/%=%)
+
+#LOCAL_SRC_FILES := $(PROJECT_FILES)
+
+LOCAL_EXPORT_C_INCLUDES := $(LOCAL_C_INCLUDES)
+include $(BUILD_SHARED_LIBRARY)
